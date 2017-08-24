@@ -52,7 +52,7 @@ app.use(express.static('./'))
 setInterval(isIt, 3000)
 
 app.get('/', (req, res) => {
-    res.sendFile('index.html')
+    res.sendFile('/index.html')
 })
 
 app.get('*', function (req, res) {
