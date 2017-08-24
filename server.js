@@ -1,6 +1,7 @@
 const express = require('express')
 const fs = require('fs')
 const app = express()
+const port = proces.env.PORT || 8088
 
 const indexHTML =
     `<!DOCTYPE html>
@@ -42,7 +43,7 @@ const isIt = function makeDelete() {
     }
 }
 
-app.listen(8088, () => {
+app.listen(port, () => {
     console.log('Is this a website right now?')
 })
 
