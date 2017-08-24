@@ -1,0 +1,30 @@
+.Body {
+    background-color: black;
+    color: white;
+    font-family: 'Pacifico', cursive, Arial, Helvetica, sans-serif;    
+    font-size: 10vw;
+}
+
+.Yes {
+    text-align: center;
+    text-shadow: 0vmin 0.75vmin 0vmin rgba(150, 150, 150, 0.75);    
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    animation: slidein 3s ease-out;
+}
+  
+@keyframes slidein {
+
+from {
+    margin-top: 100%;
+    width: 300%; 
+    }
+
+to {
+    margin-top: 0%;
+    width: 100%;
+    }
+
+}
