@@ -1,7 +1,7 @@
 const express = require('express')
 const fs = require('fs')
 const app = express()
-const port = proces.env.PORT || 8088
+const port = process.env.PORT || 8088
 
 const indexHTML =
     `<!DOCTYPE html>
