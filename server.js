@@ -19,26 +19,39 @@ const indexHTML =
     </body>
     </html>`
 
-let yes = 0
-let no = 0
-
 const isIt = function makeDelete() {
+
+    let today = new Date()
+    let date = `${(today.getMonth() + 1)}-${today.getDate()}-${today.getFullYear()}`
+    let time = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`
+    let dateTime = `${time} | ${date}`
+
     if (getRandom() >= 0.5) {
         fs.writeFile('index.html', indexHTML, (err) => {
             if (err) throw err
-                ++yes
-            console.log(`How many times has this has been a website? ${yes}`)
-            return console.log('Is it right now? Yes it is')
+            console.log('Is it right now? Yes it is')
+        })
+        fs.appendFile('yesitis.txt', 
+        `
+This was a website on | ${dateTime} |
+        `, (err) => {
+            if (err) throw err
+            console.log(dateTime)
         })
     } else {
         fs.writeFile('index.html', indexHTML, (err) => {
             if (err) throw err
             fs.unlink('index.html', (err) => {
                 if (err) throw err
-                    ++no
-                console.log(`How many times has this has not been a website? ${no}`)
-                return console.log('Is it right now? No it is not')
+                console.log('Is it right now? No it is not')
             })
+        })
+        fs.appendFile('noitisnot.txt', 
+        `
+This was not a website on | ${dateTime} |
+        `, (err) => {
+            if (err) throw err
+            console.log(dateTime)
         })
     }
 }
